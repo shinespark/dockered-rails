@@ -9,6 +9,17 @@ services:
       - MYSQL_ROOT_PASSWORD=password
     volumes:
       - ./data/mysql:/var/lib/mysql
+  nginx:
+    build: ./nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    depends_on:
+      - rails
+    links:
+      - rails
+    volumes_from:
+      - rails
   rails:
     build: ./rails
     command: bundle exec rails s -p 3000 -b '0.0.0.0' -e development
