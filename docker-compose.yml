@@ -7,6 +7,8 @@ services:
       - MYSQL_USER=mysql
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./data/mysql:/var/lib/mysql
   rails:
     build: ./rails
     command: bundle exec rails s -p 3000 -b '0.0.0.0' -e development
