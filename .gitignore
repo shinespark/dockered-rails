@@ -42,4 +42,4 @@ bower.json
 .byebug_history
 
 # Ignore MySQL DB
-./data/mysql
+./data/mysql/
