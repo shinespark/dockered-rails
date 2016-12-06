@@ -22,6 +22,18 @@ rails commands.
 $ docker-compose exec rails rails generate scaffold User name:string email:string
 ```
 
+bundle commands.
+
+```zsh
+$ docker-compose exec rails bundle install
+```
+
+rake commands.
+
+```zsh
+$ docker-compose exec rails rake haml:repalce_erbs
+```
+
 db:migrate
 
 ```zsh
