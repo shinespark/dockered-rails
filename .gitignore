@@ -43,3 +43,5 @@ bower.json
 
 # Ignore MySQL DB
 data/mysql/*
+
+nodemodules/
