@@ -1,10 +1,8 @@
 'use strict';
 
-var HTML_SRC  = './**/*.html';
-var HTML_DEST = './';
-var SCSS_SRC  = './assets/stylesheets/**/*.scss';
-var CSS_SRC   = './css/**/*.css';
-var CSS_DEST  = './css/';
+var HAML_SRC = './rails/app/views/**/*.haml';
+var SCSS_SRC = './rails/app/assets/stylesheets/**/*.scss';
+var CSS_DEST = './rails/app/assets/css/';
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -14,7 +12,7 @@ var bs = require('browser-sync').create();
 // browser-sync
 gulp.task('bs', function(){
   var bsOptions = {};
-  bsOptions.files = [HTML_SRC, CSS_SRC];
+  bsOptions.files = [HAML_SRC, SCSS_SRC];
   bsOptions.proxy = 'localhost:3000';
   bsOptions.port  = 3001;
   bs.init(bsOptions);
