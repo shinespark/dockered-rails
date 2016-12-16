@@ -42,10 +42,19 @@ $ docker-compose exec rails bundle exec rake db:migrate
 
 ## FAQ
 
-If you meet to shutdown rails.
+### If you meet to shutdown rails.
 
 rm pid.
 
 ```zsh
 $ make
+```
+
+### When you add some gems.
+
+you can rebuild only rails container.
+
+```zsh
+$ docker-compose build rails
+$ docker-compose restart
 ```
