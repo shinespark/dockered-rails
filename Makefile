@@ -1,6 +1,6 @@
 up:
-	rm -rf ./rails/tmp/
+	rm -rfv ./rails/tmp/
 	docker-compose build && docker-compose up
 
 crean:
-	rm -rf ./rails/tmp/
+	rm -rfv ./rails/tmp/
