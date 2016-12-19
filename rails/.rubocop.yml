@@ -7,13 +7,15 @@ Metrics/LineLength:
 # Can non-ascii comments.
 Style/AsciiComments:
   Enabled: false
-Style/Documentation:
-  Enabled: false
 Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ColonMethodCall:
+  Enabled: false
+Style/Documentation:
   Enabled: false
 Style/NumericLiterals:
   Enabled: false
 Style/PercentLiteralDelimiters:
   Enabled: false
-Style/ColonMethodCall:
+Style/PredicateName:
   Enabled: false
