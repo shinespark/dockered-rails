@@ -1,21 +1,28 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+
 Rails:
   Enabled: true
 
 # Limit lines to 80 characters.
 Metrics/LineLength:
   Enabled: false
+
 # Can non-ascii comments.
 Style/AsciiComments:
   Enabled: false
+
+# allow Hoge::Fuge
 Style/ClassAndModuleChildren:
   Enabled: false
-Style/ColonMethodCall:
-  Enabled: false
+
+# allow non docs.
 Style/Documentation:
   Enabled: false
+
+# only over 1_000_000
 Style/NumericLiterals:
-  Enabled: false
-Style/PercentLiteralDelimiters:
-  Enabled: false
-Style/PredicateName:
-  Enabled: false
+  MinDigits: 7
