@@ -7,5 +7,5 @@ COPY Gemfile /app/Gemfile
 # Uncomment except first time
 # COPY Gemfile.lock /app/Gemfile.lock
 COPY .gemrc /app/.gemrc
-RUN bundle install
+RUN bundle install --without production
 ADD . /app
