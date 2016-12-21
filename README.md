@@ -58,3 +58,11 @@ you can rebuild only rails container.
 $ docker-compose build rails
 $ docker-compose restart
 ```
+
+### Update gems
+
+```zsh
+$ docker-compose exec rails bundle update
+$ git add rails/Gemfile.lock
+$ git commit
+```
