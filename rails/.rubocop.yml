@@ -6,6 +6,10 @@ AllCops:
 
 Rails:
   Enabled: true
+
+Rails/HttpPositionalArguments:
+  Enabled: false
+
 Rails/RequestReferer:
   EnforcedStyle: referrer
 
