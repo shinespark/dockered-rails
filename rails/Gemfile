@@ -1,54 +1,65 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.7.1'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.1'
 
 gem 'mysql2', '>= 0.3.13', '< 0.5'
+gem 'puma', '~> 3.0'
 
-gem 'coffee-rails', '~> 4.1.0'
-gem 'sass-rails', '~> 5.0'
+gem 'haml-rails'
+gem 'jbuilder', '~> 2.5'
+gem 'turbolinks', '~> 5'
+
+# pagenate
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+
+gem 'coffee-rails', '~> 4.2'
+gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
+
+gem 'bootstrap-sass'
+gem 'sass-rails', '~> 5.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'jbuilder', '~> 2.0'
-gem 'jquery-rails'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'turbolinks'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 3.0'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bcrypt'
-gem 'bootstrap-sass'
-gem 'faker'
-gem 'haml-rails'
-
-# paginate
-gem 'bootstrap-will_paginate'
-gem 'will_paginate'
-
 group :development, :test do
-  gem 'byebug'
-  gem 'rubocop'
-  gem 'scss-lint'
-  gem 'spring'
+  gem 'byebug', platform: :mri
+  gem 'guard-livereload'
+  gem 'guard-minitest'
+  gem 'guard-rubocop'
+  gem 'minitest'
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'rubocop', require: false
+  gem 'scss_lint', require: false
 end
 
 group :development do
+  gem 'listen', '~> 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'web-console', '>= 3.3.0'
+
   gem 'erb2haml'
-  gem 'web-console', '~> 2.0'
 end
 
 group :test do
   gem 'sqlite3'
-
-  gem 'minitest'
-  gem 'minitest-reporters'
-
-  gem 'guard'
-  gem 'guard-minitest'
-  gem 'mini_backtrace'
 end

@@ -1,11 +1,11 @@
-FROM ruby:2.3.3
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs imagemagick
+FROM ruby:alpine
+ENV LANG C.UTF-8
+
 RUN mkdir /app
 WORKDIR /app
 
 COPY Gemfile /app/Gemfile
 # Uncomment except first time
-# COPY Gemfile.lock /app/Gemfile.lock
-COPY .gemrc /app/.gemrc
+COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install --without production
-ADD . /app
+COPY . /app
