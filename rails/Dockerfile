@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY Gemfile /app/Gemfile
 # Uncomment except first time
-# COPY Gemfile.lock /app/Gemfile.lock
+COPY Gemfile.lock /app/Gemfile.lock
 
 RUN apk --update add $RUNTIME_PACKAGES
 RUN apk --update add --virtual build-dependencies $DEV_PACKAGES
