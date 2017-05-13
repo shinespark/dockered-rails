@@ -2,7 +2,7 @@ up:
 	rm -rfv ./rails/tmp
 	docker-compose build && docker-compose up
 
-crean:
+clean:
 	rm -rfv ./rails/tmp
 
 db_migrate:
