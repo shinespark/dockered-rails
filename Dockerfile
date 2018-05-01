@@ -1,7 +1,7 @@
 FROM ruby:alpine
 
 ENV LANG C.UTF-8
-ENV RUNTIME_PACKAGES="libxml2-dev libxslt-dev tzdata mariadb-client-libs nodejs imagemagick ca-certificates"
+ENV RUNTIME_PACKAGES="libxml2-dev libxslt-dev tzdata mariadb-client-libs nodejs ca-certificates"
 ENV DEV_PACKAGES="build-base mariadb-dev"
 
 RUN mkdir /app
