@@ -32,6 +32,7 @@ services:
       - public_data:/app/public
     ports:
       - '3000:3000'
+      - '35729:35729'
     depends_on:
       - db
 

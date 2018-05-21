@@ -1,10 +1,17 @@
 AllCops:
   DisplayCopNames: true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  StyleGuideBaseURL: https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+  ExtraDetails: true
   Exclude:
-    - 'Guardfile'
-    - 'vendor/**/*'
+    - 'app/bin/**/*'
     - 'db/schema.rb'
+    - "vendor/**/*"
 
+# --------------------------------------
+# Rails
+# --------------------------------------
 Rails:
   Enabled: true
 
@@ -14,13 +21,61 @@ Rails/HttpPositionalArguments:
 Rails/RequestReferer:
   EnforcedStyle: referrer
 
+# --------------------------------------
+# Bundler
+# --------------------------------------
+Bundler/OrderedGems:
+  Enabled: false
+
+# --------------------------------------
+# Layout
+# --------------------------------------
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Layout/SpaceBeforeSemicolon:
+  Enabled: false
+
+# --------------------------------------
+# Lint
+# --------------------------------------
 # Can scope :by_tag, ->(tag) { where('tags.id': tag) if tag.present? }
 Lint/AmbiguousBlockAssociation:
   Enabled: false
 
-Metrics/LineLength:
+# --------------------------------------
+# Naming
+# --------------------------------------
+Naming/PredicateName:
   Enabled: false
 
+# --------------------------------------
+# Metrics
+# --------------------------------------
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 160
+
+Metrics/MethodLength:
+  Max: 30
+
+# --------------------------------------
+# Style
+# --------------------------------------
 # Can non-ascii comments.
 Style/AsciiComments:
   Enabled: false
@@ -36,30 +91,24 @@ Style/ColonMethodCall:
 Style/Documentation:
   Enabled: false
 
-Style/EmptyLinesAroundAccessModifier:
-  Enabled: false
-
-Style/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-
 Style/EmptyMethod:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 # only over 1_000_000
 Style/NumericLiterals:
   MinDigits: 7
 
-Style/OrderedGems:
-  Enabled: false
-
 Style/PercentLiteralDelimiters:
-  Enabled: false
-
-Style/PredicateName:
   Enabled: false
 
 Style/StringLiterals:
   Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
