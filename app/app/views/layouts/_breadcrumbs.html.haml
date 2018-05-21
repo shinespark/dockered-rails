@@ -1,0 +1,11 @@
+- breadcrumbs(autoroot: false, link_current_to_request_path: false).tap do |links|
+  - if links.any?
+    .breadcrumbs-container
+      %ol.breadcrumbs
+        - links.each do |link|
+          - if link.current?
+            %li.active
+              = link.text
+          - else
+            %li
+              = link_to link.text, link.url

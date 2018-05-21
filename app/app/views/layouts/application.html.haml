@@ -13,4 +13,9 @@
     = render 'layouts/header'
 
     .main.container-fluid
+      = render 'layouts/breadcrumbs'
       = yield
+
+    - if Rails.env.development?
+      .alert.alert-dark
+        = debug(params)
